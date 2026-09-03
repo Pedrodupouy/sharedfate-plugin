@@ -1,6 +1,14 @@
 name: SharedFate
-version: 1.0.0
+version: '1.0.0'
 main: com.pedro.sharedfate.SharedFatePlugin
 api-version: '1.21'
 author: Pedro
-description: Comparte vida, hambre y progreso de minado entre los jugadores del servidor.
+description: 'Vida, hambre y minado compartidos entre jugadores para servidores hardcore cooperativos'
+commands:
+  sharedfate:
+    description: Recarga la configuración de SharedFate
+    usage: /sharedfate reload
+permissions:
+  sharedfate.admin:
+    description: Permite recargar la configuración de SharedFate
+    default: op
