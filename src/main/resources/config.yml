@@ -1,0 +1,24 @@
+# Configuración de SharedFate
+
+# Vida compartida: cuando un jugador recibe daño, los demás jugadores
+# conectados también reciben una parte de ese daño.
+share-health:
+  enabled: true
+  # Porcentaje del daño recibido que se replica a los demás jugadores (0-100)
+  percentage: 100
+  # Nunca dejar la vida de un jugador (que no fue el que recibió el golpe original)
+  # por debajo de este valor a causa del daño compartido, para evitar cadenas de
+  # muertes accidentales. El jugador que sí recibió el golpe original no tiene este límite.
+  min-health-floor: 1.0
+
+# Hambre compartida: cuando el nivel de hambre de un jugador cambia,
+# el mismo cambio se aplica a los demás jugadores conectados.
+share-hunger:
+  enabled: true
+  percentage: 100
+
+# Progreso de minado compartido: cuenta total de bloques minados por el equipo
+# y anuncia hitos cada cierta cantidad de bloques.
+shared-mining:
+  enabled: true
+  milestone-interval: 100
