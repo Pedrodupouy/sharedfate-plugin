@@ -1,0 +1,6 @@
+name: SharedFate
+version: 1.0.0
+main: com.pedro.sharedfate.SharedFatePlugin
+api-version: '1.21'
+author: Pedro
+description: Comparte vida, hambre y progreso de minado entre los jugadores del servidor.
