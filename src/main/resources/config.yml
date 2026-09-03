@@ -1,24 +1,57 @@
-# Configuración de SharedFate
-
-# Vida compartida: cuando un jugador recibe daño, los demás jugadores
-# conectados también reciben una parte de ese daño.
-share-health:
+# =========================================
+#  Configuración de SharedFate
+#  Después de cambiar algo aquí, usa /sharedfate reload
+#  (o reinicia el servidor) para aplicar los cambios.
+# =========================================
+shared-health:
   enabled: true
-  # Porcentaje del daño recibido que se replica a los demás jugadores (0-100)
-  percentage: 100
-  # Nunca dejar la vida de un jugador (que no fue el que recibió el golpe original)
-  # por debajo de este valor a causa del daño compartido, para evitar cadenas de
-  # muertes accidentales. El jugador que sí recibió el golpe original no tiene este límite.
-  min-health-floor: 1.0
-
-# Hambre compartida: cuando el nivel de hambre de un jugador cambia,
-# el mismo cambio se aplica a los demás jugadores conectados.
-share-hunger:
+shared-hunger:
   enabled: true
-  percentage: 100
-
-# Progreso de minado compartido: cuenta total de bloques minados por el equipo
-# y anuncia hitos cada cierta cantidad de bloques.
 shared-mining:
   enabled: true
-  milestone-interval: 100
+  broadcast: true
+  materials:
+    - DIAMOND_ORE
+    - DEEPSLATE_DIAMOND_ORE
+    - GOLD_ORE
+    - DEEPSLATE_GOLD_ORE
+    - NETHER_GOLD_ORE
+    - IRON_ORE
+    - DEEPSLATE_IRON_ORE
+    - COAL_ORE
+    - DEEPSLATE_COAL_ORE
+    - COPPER_ORE
+    - DEEPSLATE_COPPER_ORE
+    - STONE
+    - OAK_LOG
+    - SPRUCE_LOG
+    - BIRCH_LOG
+    - JUNGLE_LOG
+    - ACACIA_LOG
+    - DARK_OAK_LOG
+    - MANGROVE_LOG
+    - CHERRY_LOG
+    - PALE_OAK_LOG
+    - CRIMSON_STEM
+    - WARPED_STEM
+    - STRIPPED_OAK_LOG
+    - STRIPPED_SPRUCE_LOG
+    - STRIPPED_BIRCH_LOG
+    - STRIPPED_JUNGLE_LOG
+    - STRIPPED_ACACIA_LOG
+    - STRIPPED_DARK_OAK_LOG
+    - STRIPPED_MANGROVE_LOG
+    - STRIPPED_CHERRY_LOG
+    - STRIPPED_PALE_OAK_LOG
+    - STRIPPED_CRIMSON_STEM
+    - STRIPPED_WARPED_STEM
+    - WHEAT
+    - CARROTS
+    - POTATOES
+    - BEETROOTS
+    - MELON
+    - PUMPKIN
+    - SWEET_BERRY_BUSH
+    - COCOA
+    - CAVE_VINES
+    - CAVE_VINES_PLANT
