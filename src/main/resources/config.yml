@@ -1,0 +1,123 @@
+# =========================================
+#  Configuración de SharedFate
+#  Después de cambiar algo aquí, usa /sharedfate reload
+#  (o reinicia el servidor) para aplicar los cambios.
+# =========================================
+
+# Vida compartida: si un jugador recibe daño, los otros reciben
+# exactamente el mismo daño (en puntos de vida).
+shared-health:
+  enabled: true
+
+# Hambre compartida: el nivel de hambre de los tres jugadores
+# se mantiene sincronizado (sube al comer, baja al desgastarse).
+shared-hunger:
+  enabled: true
+
+# Minado compartido: al romper uno de los bloques de la lista,
+# los demás jugadores en línea reciben una copia de lo que soltó
+# el bloque (respeta Fortuna / Toque de Seda). El gasto de esos
+# ítems siempre es individual, cada quien tiene su inventario.
+shared-mining:
+  enabled: true
+  # Si es true, se envía un mensaje al resto del equipo cuando
+  # reciben una copia por minado compartido.
+  broadcast: true
+  # Lista de bloques que activan el minado compartido.
+  # Usa los nombres de Material de Minecraft (en mayúsculas).
+  materials:
+    # --- Diamante ---
+    - DIAMOND_ORE
+    - DEEPSLATE_DIAMOND_ORE
+    # --- Oro ---
+    - GOLD_ORE
+    - DEEPSLATE_GOLD_ORE
+    - NETHER_GOLD_ORE
+    # --- Hierro ---
+    - IRON_ORE
+    - DEEPSLATE_IRON_ORE
+    # --- Carbón ---
+    - COAL_ORE
+    - DEEPSLATE_COAL_ORE
+    # --- Cobre ---
+    - COPPER_ORE
+    - DEEPSLATE_COPPER_ORE
+    # --- Piedra normal (la de las cuevas, sin variantes) ---
+    - STONE
+    # --- Madera (todos los troncos, incluidos los pelados) ---
+    - OAK_LOG
+    - SPRUCE_LOG
+    - BIRCH_LOG
+    - JUNGLE_LOG
+    - ACACIA_LOG
+    - DARK_OAK_LOG
+    - MANGROVE_LOG
+    - CHERRY_LOG
+    - PALE_OAK_LOG
+    - CRIMSON_STEM
+    - WARPED_STEM
+    - STRIPPED_OAK_LOG
+    - STRIPPED_SPRUCE_LOG
+    - STRIPPED_BIRCH_LOG
+    - STRIPPED_JUNGLE_LOG
+    - STRIPPED_ACACIA_LOG
+    - STRIPPED_DARK_OAK_LOG
+    - STRIPPED_MANGROVE_LOG
+    - STRIPPED_CHERRY_LOG
+    - STRIPPED_PALE_OAK_LOG
+    - STRIPPED_CRIMSON_STEM
+    - STRIPPED_WARPED_STEM
+    # --- Comida (cultivos que se obtienen rompiendo el bloque) ---
+    - WHEAT
+    - CARROTS
+    - POTATOES
+    - BEETROOTS
+    - MELON
+    - PUMPKIN
+    - SWEET_BERRY_BUSH
+    - COCOA
+    - CAVE_VINES
+    - CAVE_VINES_PLANT
+
+# Caza compartida: si un jugador mata uno de estos animales/mobs,
+# los demás jugadores en línea reciben una copia de lo que soltó
+# (respeta Fortuna/Botín en el arma). El gasto es siempre individual.
+shared-hunting:
+  enabled: true
+  broadcast: true
+  entities:
+    - COW
+    - PIG
+    - SHEEP
+    - CHICKEN
+    - RABBIT
+    - MOOSHROOM
+    - COD
+    - SALMON
+    - SQUID
+    - PUFFERFISH
+    - ENDERMAN
+    - SKELETON
+
+# Trueque de piglins compartido: si un piglin completa un trueque
+# (bartering) cerca de un jugador, los demás jugadores en línea
+# reciben una copia del resultado. La API no identifica al jugador
+# exacto que lanzó el oro, así que se usa el jugador en línea más
+# cercano al piglin como aproximación.
+shared-bartering:
+  enabled: true
+  broadcast: true
+
+# Multiplicador de mobs: cada vez que uno de estos mobs aparece de forma
+# NATURAL (no por spawner, comando, ni por este mismo multiplicador),
+# se generan copias extra al lado. multiplier: 3 = cada spawn real se
+# vuelve 3. Los zombies bebé se preservan como bebé en las copias.
+shared-mob-multiplier:
+  enabled: true
+  multiplier: 3
+  entities:
+    - ZOMBIE
+    - SKELETON
+    - CREEPER
+    - SPIDER
+    - GHAST
